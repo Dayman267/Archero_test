@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - SceneObjects
   layers:
   - Default
   - TransparentFX
@@ -38,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BattleField
+    uniqueID: 357998785
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: OverObstacles
+    uniqueID: 3490029019
+    locked: 0
+  - name: Eyes
+    uniqueID: 1844274669
+    locked: 0
+  - name: Canvas
+    uniqueID: 922320931
     locked: 0
