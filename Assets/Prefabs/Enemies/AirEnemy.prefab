@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6550495488485026594}
   - component: {fileID: 46692657337475802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 186286799000563742}
   - component: {fileID: 5964569476496808867}
   - component: {fileID: 1435209555721422579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AirEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142929307715638629}
   - component: {fileID: 3652690807349644202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
