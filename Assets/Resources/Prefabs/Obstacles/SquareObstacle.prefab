@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5863750414454680169}
   - component: {fileID: 8442667582282190364}
   - component: {fileID: 800599697936933350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SquareObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

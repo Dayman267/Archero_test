@@ -4,24 +4,30 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     private Rigidbody2D rb;
-    [SerializeField] Joystick joystick;
+    private Joystick joystick;
     private Vector2 moveInput;
+    
     [SerializeField] private uint circlecastRadius = 20;
     [SerializeField] private uint circlecastDistance = 30;
+    
     [SerializeField] private LayerMask castingMask;
+
+    private bool canContiniue;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        joystick = FindObjectOfType<Joystick>();
     }
 
     private void FixedUpdate()
     {
+        if (!canContiniue) return;
         Walk();
         Look();
     }
     
-    public void Walk()
+    private void Walk()
     {
         moveInput = joystick.Direction;
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
@@ -56,5 +62,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float rotate = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotate - 90);
+    }
+
+    private void OnEnable()
+    {
+        Timer.onTimerEnded += () => canContiniue = true;
+    }
+    
+    private void OnDisable()
+    {
+        Timer.onTimerEnded -= () => canContiniue = true;
     }
 }

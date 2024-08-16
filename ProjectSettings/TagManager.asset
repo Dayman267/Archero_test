@@ -6,17 +6,28 @@ TagManager:
   tags:
   - Obstacle
   - SceneObjects
+  - Enemy
+  - Battlefield
+  - Enemies
+  - Wall
+  - HealthImage
+  - Shotgun
+  - Famas
+  - AttachedToPlayer
+  - Joystick
+  - Bullet
+  - FinalMessage
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Enemy
-  - 
-  - 
-  - 
+  - Wall
+  - Obstacle
+  - FlyingEnemy
   - 
   - 
   - 
