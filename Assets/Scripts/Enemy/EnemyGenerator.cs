@@ -30,7 +30,7 @@ public class EnemyGenerator : MonoBehaviour
         float limitY = centerY + battlefield.transform.localScale.y / 6;
         float limitMinusY = centerY - battlefield.transform.localScale.y / 6;
         
-        uint enemiesCount = (uint)Random.Range(enemies.Length, enemies.Length + 2);
+        uint enemiesCount = (uint)Random.Range(enemies.Length - 1, enemies.Length + 1);
         for (int i = 0; i < enemiesCount; i++)
         {
             var randomPositionX = Random.Range(-limitX, limitX);
