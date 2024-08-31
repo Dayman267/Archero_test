@@ -41,20 +41,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(
-                transform.position, 
-                circlecastRadius, 
-                Vector2.up, 
-                circlecastDistance, 
-                castingMask);
-            Vector2 closestEnemy = Vector2.positiveInfinity;
-            foreach (var hit in hits)
-            {
-                closestEnemy = Vector2.Distance(hit.transform.position, transform.position) < 
-                               Vector2.Distance(closestEnemy, transform.position) ? hit.transform.position : closestEnemy;
-            }
-            Vector2 direction = closestEnemy - (Vector2)transform.position;
-            Rotate(direction);
+            Rotate(DirectionToClosestEnemy());
         }
     }
 
@@ -62,6 +49,25 @@ public class PlayerMovement : MonoBehaviour
     {
         float rotate = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotate - 90);
+    }
+
+    public Vector2 DirectionToClosestEnemy()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(
+            transform.position, 
+            circlecastRadius, 
+            Vector2.up, 
+            circlecastDistance, 
+            castingMask);
+        Vector2 closestEnemy = Vector2.positiveInfinity;
+        foreach (var hit in hits)
+        {
+            closestEnemy = Vector2.Distance(hit.transform.position, transform.position) < 
+                           Vector2.Distance(closestEnemy, transform.position) ? hit.transform.position : closestEnemy;
+        }
+        Vector2 direction = closestEnemy - (Vector2)transform.position;
+        direction.Normalize();
+        return direction;
     }
 
     private void OnEnable()

@@ -7,7 +7,6 @@ public class DoorController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(enemiesCount);
         if (enemiesCount <= 0) finalDoors.SetActive(true);
     }
 
