@@ -36,6 +36,6 @@ public class Bullet : MonoBehaviour
             collider.gameObject.GetComponent<PlayerHealth>().GetDamage(damage);
         else if(collider.gameObject.CompareTag("AttachedToPlayer") ||
                 collider.gameObject.CompareTag("Bullet")) return;
-        Destroy(gameObject);
+        if (!collider.gameObject.CompareTag("Frame")) Destroy(gameObject);
     }
 }

@@ -17,6 +17,8 @@ TagManager:
   - Joystick
   - Bullet
   - FinalMessage
+  - Frame
+  - Teleport
   layers:
   - Default
   - TransparentFX

@@ -4,10 +4,15 @@ public class DoorController : MonoBehaviour
 {
     private uint enemiesCount;
     [SerializeField] private GameObject finalDoors;
+    [SerializeField] private GameObject teleport;
 
     private void FixedUpdate()
     {
-        if (enemiesCount <= 0) finalDoors.SetActive(true);
+        if (enemiesCount <= 0)
+        {
+            finalDoors.SetActive(true);
+            teleport.SetActive(true);
+        }
     }
 
     private void OnEnable()
