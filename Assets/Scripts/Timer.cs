@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class Timer : MonoBehaviour
 
     public static Action onTimerEnded;
 
-    private void Awake()
+    private void Start()
     {
         textMP = GetComponent<TextMeshProUGUI>();
+        if (SceneManager.GetActiveScene().name != "Hub") return;
+        onTimerEnded?.Invoke();
+        gameObject.SetActive(false);
     }
 
     private IEnumerator TimerCoroutine()

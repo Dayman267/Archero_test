@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if(SceneManager.GetActiveScene().name == "Hub") return;
             Rotate(DirectionToClosestEnemy());
         }
     }
